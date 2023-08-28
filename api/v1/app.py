@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""States module"""
 from flask import Flask
 from api.v1.views import app_views
 from models import storage
@@ -11,6 +12,7 @@ app.register_blueprint(app_views, url_prefix='/api/v1')
 
 @app.teardown_appcontext
 def teardown_db(exception):
+    """ Closes the storage on teardown """
     storage.close()
 
 
