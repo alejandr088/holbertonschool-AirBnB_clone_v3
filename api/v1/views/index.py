@@ -10,6 +10,7 @@ def status():
     """ Returns a JSON """
     return jsonify({"status": "OK"})
 
+
 @app_views.route('/stats', methods=['GET'])
 def stats():
     """ Retrieves the number of each objects by type """
@@ -18,5 +19,6 @@ def stats():
                     "places": storage.count("Place"),
                     "reviews": storage.count("Review"),
                     "states": storage.count("State"),
-                    "users": storage.count("User")}
-                    )
+                    "users": storage.count("User")
+                    }
+                   )
